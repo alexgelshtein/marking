@@ -5,7 +5,7 @@ import tkinter.messagebox
 # Creating script for laser to output thr text separately by letter
 def marker_script(speed, power, font_size, output_text):
   with open('C:/Users/laser/Desktop/marking.lsc', 'w') as marker:
-    marker.write('freq 50\nspeed {}\npower {}\n\nttfont "Times New Roman", {}, 3, 20,, 1\nrotate -90\n\n'.format(speed, power, font_size))
+    marker.write('freq 50\nspeed {}\npower {}\n\nttfont "Times New Roman", {}, 3, 20,, 1\nrotate -90\nalign "left"\n\n'.format(speed, power, font_size))
     for each in output_text:
       if not each.isspace():
         marker.write('outport 1\ntext "{}"\noutport 0\ndelay 500\n\n'.format(each))
