@@ -1,0 +1,60 @@
+global position= get_actual_joint_positions ()
+sleep(1.5)
+set_standard_digital_out(7, True)
+Loop_0 = 0
+while (Loop_0 < 4):
+  while (get_standard_digital_in(7) == False):
+    sync()
+  end
+  while (get_standard_digital_in(7) == True):
+    sync()
+  end
+  position[5]=position[5]- d2r (2.865)
+  movej(position, a=3.490658503988659, v=2.0943951023931953)
+  Loop_0 = Loop_0 + 1
+end
+position[5]=position[5]- d2r (2.865)
+movej(position, a=3.490658503988659, v=2.0943951023931953)
+Loop_1 = 0
+while (Loop_1 < 4):
+  while (get_standard_digital_in(7) == False):
+    sync()
+  end
+  while (get_standard_digital_in(7) == True):
+    sync()
+  end
+  position[5]=position[5]- d2r (2.865)
+  movej(position, a=3.490658503988659, v=2.0943951023931953)
+  Loop_1 = Loop_1 + 1
+end
+position[5]=position[5]- d2r (2.865)
+movej(position, a=3.490658503988659, v=2.0943951023931953)
+Loop_2 = 0
+while (Loop_2 < 4):
+  while (get_standard_digital_in(7) == False):
+    sync()
+  end
+  while (get_standard_digital_in(7) == True):
+    sync()
+  end
+  position[5]=position[5]- d2r (2.865)
+  movej(position, a=3.490658503988659, v=2.0943951023931953)
+  Loop_2 = Loop_2 + 1
+end
+position[5]=position[5]- d2r (2.865)
+movej(position, a=3.490658503988659, v=2.0943951023931953)
+Loop_3 = 0
+while (Loop_3 < 5):
+  while (get_standard_digital_in(7) == False):
+    sync()
+  end
+  while (get_standard_digital_in(7) == True):
+    sync()
+  end
+  position[5]=position[5]- d2r (2.865)
+  movej(position, a=3.490658503988659, v=2.0943951023931953)
+  Loop_3 = Loop_3 + 1
+end
+position[5]=position[5]- d2r (2.865)
+movej(position, a=3.490658503988659, v=2.0943951023931953)
+set_standard_digital_out(7, False)

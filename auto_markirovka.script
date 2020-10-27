@@ -1,0 +1,5 @@
+global position= get_actual_joint_positions ()
+sleep(1.5)
+set_standard_digital_out(7, True)
+$OUTPUT
+set_standard_digital_out(7, False)
