@@ -54,7 +54,7 @@ def robot_script(in_file, output_text, font_size, one_mm_to_rotate):
           if each.isspace() != True:
             out_file.write(text.format(degree = round(turn, 3)))
           else:
-            out_file.write("position[5]=position[5]- d2r ({degree})\nmovej(position, a=3.490658503988659, v=2.0943951023931953)\n".format(degree = round(turn, 3)))
+            out_file.write("position[5]=position[5] + d2r ({degree})\nmovej(position, a=3.490658503988659, v=2.0943951023931953)\n".format(degree = round(turn, 3)))
       else:
         out_file.write(line)
 
@@ -64,7 +64,7 @@ end
 while (get_standard_digital_in(7) == True):
   sync()
 end
-position[5]=position[5]- d2r ({degree})
+position[5]=position[5] + d2r ({degree})
 movej(position, a=3.490658503988659, v=2.0943951023931953)
 """
 
