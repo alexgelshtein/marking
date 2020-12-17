@@ -1,8 +1,11 @@
+# This program generates files for laser marking and robot depending on
+# what text is going to be marked.
+
 from math import pi
 import tkinter as tk
 import tkinter.messagebox
 
-# Creating script for laser to output thr text separately by letter
+# Creating script for laser to output the text separately by letter.
 def marker_script(speed, power, font_size, output_text):
   with open('C:/Users/laser/Desktop/marking.lsc', 'w') as marker:
     marker.write('freq 50\nspeed {}\npower {}\n\nttfont "Times New Roman", {}, 3, 20,, 1\nrotate -90\nalign "left"\n\n'.format(speed, power, font_size))
@@ -12,7 +15,7 @@ def marker_script(speed, power, font_size, output_text):
       else:
         marker.write('delay 250\n\n')
 
-# Creating script for robot to rotate depending on the letter being marked
+# Creating script for robot to rotate depending on the letter being marked.
 def robot_script(in_file, output_text, font_size, one_mm_to_rotate):
   point9 = ['W'] 
   point8 = ['Ъ', 'Ш', 'Щ', 'Ф', 'Ж']          
@@ -21,7 +24,7 @@ def robot_script(in_file, output_text, font_size, one_mm_to_rotate):
   point5 = ['З', 'C', 'E', 'F', 'L', 'b', 'd', 'e', 'g', 'h', 'k', 'n', 'o', 'p', 'q', 's', 'u', 'v', 'x', 'y', 'z']
   point4 = ['з', 'с', 'G', 'c', 'f', 'r', 't', '-']
   point3 = ['g', '1']
-  point2 = ['l']
+  point2 = ['J', 'l']
   point1 = ['I', 'i', '.']
   with open("C:/Users/laser/Desktop/robot.script", "w") as out_file:
     for line in in_file.readlines():
